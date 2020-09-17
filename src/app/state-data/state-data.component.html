@@ -1,0 +1,71 @@
+<router-outlet #outlet="outlet"></router-outlet>
+<div *ngIf="!outlet.isActivated">
+<div>
+  <h1 class="text-center pt-3">COVID19 Tracker</h1>
+</div>
+<hr />
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card w-100 text-center bg-danger">
+        <div class="card-body" style="background-color: #ffcdd2">
+          <h5 class="card-title text-center pt-5" style="color: #d9534f">
+            {{ totalInfo?.deaths | number }}
+          </h5>
+        </div>
+        <div class="card-footer text-white font-weight-bold">Death</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card w-100 text-center bg-success">
+        <div class="card-body" style="background-color: #c8e6c9">
+          <h5 class="card-title text-center pt-5" style="color: #388e3c">
+            {{ totalInfo?.recovered | number }}
+          </h5>
+        </div>
+        <div class="card-footer text-white font-weight-bold">Recovered</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card w-100 text-center bg-warning">
+        <div class="card-body" style="background-color: #fff59d">
+          <h5 class="card-title text-center pt-5" style="color: #f9a825">
+            {{ totalInfo?.confirmed | number }}
+          </h5>
+        </div>
+        <div class="card-footer text-white font-weight-bold">Confirmed</div>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />
+<div>
+  <h3 class="text-center pt-3"><u>Statewise Information</u></h3>
+</div>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">State</th>
+            <th scope="col">Confirmed</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Death</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stateDatas of stateData; let i = index" (click)="RowSelected(stateDatas);">
+            <td>{{ stateDatas?.state }}</td>
+            <td>{{ stateDatas?.confirmed | number }}</td>
+            <td>{{ stateDatas?.recovered | number }}</td>
+            <td>{{ stateDatas?.deaths | number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

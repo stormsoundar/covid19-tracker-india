@@ -1,0 +1,25 @@
+h1 {
+ color: grey;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card {
+  border: none;
+  border-radius: 0%;
+  /* max-width: 22rem;
+  height: 13rem; */
+}
+
+.card-title {
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+.card-footer {
+  font-weight: 600;
+  font-size: large;
+}
+
+table {
+  border: grey solid 1px;
+}

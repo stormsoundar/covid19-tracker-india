@@ -1,0 +1,29 @@
+<div>
+ <h3 class="text-center pt-3"><u>Districtwise Information</u></h3>
+</div>
+<br />
+<div class="container">
+ <div class="row">
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <button class="btn btn-primary float-right" (click)="goBack()">Go Back</button>
+     <table class="table">
+       <thead class="thead-dark">
+         <tr>
+           <th scope="col">District</th>
+           <th scope="col">Confirmed</th>
+           <th scope="col">Recovered</th>
+           <th scope="col">Death</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let stateData of districtData;">
+           <td>{{ stateData?.name }}</td>
+           <td>{{ stateData?.confirmed ? stateData?.confirmed : "0" }}</td>
+           <td>{{ stateData?.recovered ? stateData?.recovered : "0" }}</td>
+           <td>{{ stateData?.deaths ? stateData?.deaths : "0" }}</td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+ </div>
+</div>
